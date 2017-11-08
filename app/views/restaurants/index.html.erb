@@ -1,12 +1,20 @@
-<div class="container">
-  <div class="row">
-      <div class="col-xs-8 col-xs-offset-2">
-        <h2>Here are all Restaurants</h2>
-        <% @restaurants.each do |restaurant| %>
-          <%=  link_to restaurant_path(restaurant) do %>
-          <h4><%= restaurant.name %></h4>
-          <% end %>
-        <% end %>
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://kitt.lewagon.com/placeholder/cities/berlin');">
+  <div class="banner-content">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2 text-center">
+          <h1>Here are all Restaurants</h1>
+            <ul class="list-inline list-unstyled">
+            <% @restaurants.each do |restaurant| %>
+              <li class="btn btn-default">
+              <%=  link_to restaurant_path(restaurant) do %>
+              <%= restaurant.name %></li>
+              <% end %>
+            <% end %>
+            </ul>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+
